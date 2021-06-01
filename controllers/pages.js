@@ -1,3 +1,4 @@
+import {apiKeyConfig} from "./config.js"
 
 const pages = {
 

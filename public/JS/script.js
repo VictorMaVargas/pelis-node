@@ -1,13 +1,20 @@
-import { apiKeyConfig } from "../config.js"
-
-const fetch = require('node-fetch');
+//import { apiKeyConfig } from "../config.js"
 
 document.getElementById("boton").addEventListener("click", function(){
 
     let titulo = document.getElementById("search").value
-
-    fetch(`http://www.omdbapi.com/?t=${titulo}&apikey=${(apiKeyConfig)}`)
-    .then(res=>res.json())
-    .then(data=>console.log(data))
+    let informacion = {
+        titulo: titulo
+    }
+    console.log(informacion);
+    let opciones = {
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify(informacion)
+    }
+    console.log(opciones);
+    fetch("http://localhost:3000/film",opciones);
 
 });

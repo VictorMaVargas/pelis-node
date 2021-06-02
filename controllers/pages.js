@@ -9,8 +9,12 @@ const pages = {
         }
         res.status(200).render("home", datos)
     },
-    film: (req, res) => {
-        res.status(200).render("film")
+    film: async (req, res) => {
+       
+       let peli = req.params.title
+       let data = await info.getMovies(`http://www.omdbapi.com/?t=${titulo}&apikey=${(apiKeyConfig)}`)
+
+        res.status(200).render("film",{data})
     },
 
 }

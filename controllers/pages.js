@@ -32,3 +32,4 @@ const pages = {
 module.exports = pages;
 
 //(`http://www.omdbapi.com/?t=${titulo}&apikey=3265fadd`)
+

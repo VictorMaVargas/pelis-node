@@ -1,4 +1,9 @@
 #boton{
-
-width: 200px;
+    display:flex;
+    flex-direction: column;
+    width: 80px;
+    margin-top: 10px;
+}
+h1{
+    margin: 10px;
 }

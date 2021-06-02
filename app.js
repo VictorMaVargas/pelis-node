@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const router = require("./controllers/index")
+const routerApi = require('./controllers/routerApi')
 
 app.use("/public",express.static('public'));
 
@@ -14,7 +15,8 @@ app.use(express.json());
 
 app.use('/', router)
 
-
+app.use('/api', routerApi)
+app.use('/',router)
 
 
 app.listen(port, () => {

@@ -28,6 +28,9 @@ const pages = {
     console.log(url);
     res.redirect(url);
   },
+  details: (req, res) => {
+      
+  }
 };
 module.exports = pages;
 

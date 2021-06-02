@@ -1,11 +1,11 @@
-const router = require('express').Router(); 
-const pages = require('./pages')
 
+const router = require ("express").Router();
+const pages = require ("./pages")
 
 router.get('/', pages.home)
-router.get('/film',pages.film)
+router.get('/film/:title', pages.film)
 
+//router.post('/film', pages.film)
 
+module.exports = router
 
-
-module.exports = router;

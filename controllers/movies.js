@@ -1,12 +1,12 @@
 const {apiKeyConfig} = require ("../config");
-
+const apiKey = process.env.apiKey || apiKeyConfig.apiKey
 const peli = require ('../utils/peliculas');
 
 const routes = {
 
     getFilm : async (req,res) => {
         const titulo = req.params.title;
-        const data = await peli.getPelicula(`http://www.omdbapi.com/?t=${titulo}&apikey=${apiKeyConfig.apiKey}`)
+        const data = await peli.getPelicula(`http://www.omdbapi.com/?t=${titulo}&apikey=${apiKey}`)
     
         res.status(200).json(data);
     },

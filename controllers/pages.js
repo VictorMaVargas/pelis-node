@@ -1,4 +1,5 @@
 const {apiKeyConfig} = require ("../config");
+const apiKey = process.env.apiKey || apiKeyConfig.apiKey
 //const {apiKey} = require ("../config");
 //import {apiKeyConfig} from "./config.js"; 
 const fetch = require("node-fetch");
@@ -12,7 +13,7 @@ const pages = {
   },
   film: (req, res) => {
     let titulo = req.params.title;
-    fetch(`http://www.omdbapi.com/?t=${titulo}&apikey=${apiKeyConfig.apiKey}`)
+    fetch(`http://www.omdbapi.com/?t=${titulo}&apikey=${apiKey}`)
     .then(res=>res.json())
     .then(data => {
         //console.log(data);

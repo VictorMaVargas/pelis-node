@@ -11,7 +11,7 @@ const routes = {
         res.status(200).json(data);
     },
      postFilm: async (req,res) =>{ 
-        console.log(req.body);
+        console.log(req.body);//construir JSON a la hora de hacer el POST
         const name = req.body.title
         const message ={message : "Se ha guardado " + name}
         res.status(200).json(message);

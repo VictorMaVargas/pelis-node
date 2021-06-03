@@ -1,4 +1,4 @@
-const {apiKeyConfig} = require ("../config");
+const {apiKeyConfig} = require ("../config.js");
 //const {apiKey} = require ("../config");
 //import {apiKeyConfig} from "./config.js"; 
 const fetch = require("node-fetch");

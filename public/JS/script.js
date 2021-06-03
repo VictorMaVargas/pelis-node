@@ -54,3 +54,4 @@ const handlePost = (event) => {
         console.log("data recogida del formulario", data)
          const postResponse = await  postNewProduct(data);
          paintCard(data, false)
+    }) 

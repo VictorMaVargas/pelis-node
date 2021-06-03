@@ -12,19 +12,19 @@ const routes = {
     },
      postFilm: (req,res) =>{ 
 
-        const name = req.body.Title
+        const name = req.body.title
         const message ={message : "Se ha guardado " + name}
         res.status(200).json(message);
     },    
     putFilm: (req,res) =>{ 
-        const name = req.body.Title
+        const name = req.body.title
         const message = {id :"0", message : "Se ha actualizado " + name}
         res.status(200).json(message);
     },
 
     
     deleteFilm:(req,res) =>{ 
-        const name = req.body.Title
+        const name = req.body.title
         const message = {id :"0", message : "Se ha borrado " + name}
         res.status(200).json(message);
     }

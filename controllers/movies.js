@@ -10,7 +10,8 @@ const routes = {
     
         res.status(200).json(data);
     },
-     postFilm: (req,res) =>{ 
+     postFilm: async (req,res) =>{ 
+        console.log(req.body);
         const name = req.body.title
         const message ={message : "Se ha guardado " + name}
         res.status(200).json(message);

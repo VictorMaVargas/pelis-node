@@ -6,7 +6,7 @@ const peliculas = {
             let film = await res.json()
         
             return film
-    }
+    },
 
 }
 

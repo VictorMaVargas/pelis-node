@@ -1,4 +1,4 @@
-//import { apiKeyConfig } from "../config.js"
+/* //import { apiKeyConfig } from "../config.js"
 
 document.getElementById("boton").addEventListener("click", function(){
 
@@ -17,4 +17,40 @@ document.getElementById("boton").addEventListener("click", function(){
     console.log(opciones);
     fetch("http://localhost:3000/film",opciones);
 
-});
+}); */
+
+const handlePost = (event) => {
+    //Detenemos el comportamiento por defecto
+    //i.e. Que se haga el POST desde el formulario
+    event.preventDefault();
+  
+    //Pendiente: Validación de elementos del Formulario...
+  
+    //Una vez hemos realizado todas las validaciones, 
+    //reanudamos el evento original (una petición POST a / film)
+    event.target.submit();
+  };
+  
+  
+  document
+    .querySelector("form")
+    //Ponemos el addEventListener a "Submit", no a click
+  
+    //Como en la función handlePost vamos a necesitar solo el argumento
+    //que te da .addEnventListener, no hace falta llamarla aqui debajo
+    .addEventListener("submit", handlePost);
+
+
+
+
+
+    document.getElementById("new-product-btn").addEventListener("click", async (e)=>{
+        e.preventDefault()
+        const form = document.getElementById("form").elements
+        const data = {}
+        for(let input of form){
+            data[input.name] = input.value
+        }
+        console.log("data recogida del formulario", data)
+         const postResponse = await  postNewProduct(data);
+         paintCard(data, false)

@@ -8,9 +8,14 @@ html(lang='en')
     
   body
     h1 Películas
-      form#form
-        input#search(type='text' placeholder='Introduce película')
-        input#boton(type='button' name='boton' value="Buscar")
+      // El formulario tiene que tener siempre un método y un action,
+      // En este caso como queremos hacer una petición POST a /film,
+      // necesitamos poner como atributos de la etiqueta:
+      form#form(method='POST', action='/film')
+        input#search(type='text', name='titulo', placeholder='Introduce película')
+        //Para controlar un formulario el ultimo input tiene que ser de type submit
+        //por que vamos a detener el comportamiento por defecto de esta acción
+        input#boton(type='submit' name='boton', value="Buscar")
   
 
   script(src="../public/js/script.js")
